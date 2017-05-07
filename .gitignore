@@ -221,5 +221,9 @@ app/*.js
 app/*.js.map
 app/*/*.js
 app/*/*.js.map
+app/*/*/*.js
+app/*/*/*.js.map
+app/*/*/*/*.js
+app/*/*/*/*.js.map
 .vs/*
 .vscode/*
