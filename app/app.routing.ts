@@ -4,9 +4,11 @@ import { HomeComponent } from './home/home.component';
 
 const APP_ROUTES: Routes = [
     { path: 'login', component: LoginComponent },
-    { path: '', loadChildren:'home/home.module#HomeModule' },
+    { path: 'home', loadChildren:'app/home/home.module#HomeModule' },
 
-    { path: '**', redirectTo: '/login'},
+    { path: '**', redirectTo: '/home'},
+    {path:'', redirectTo:'/home', pathMatch:'full'}
 ];
 
 export const appRoutingModule = RouterModule.forRoot(APP_ROUTES);
+

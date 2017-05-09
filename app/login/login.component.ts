@@ -12,10 +12,12 @@ import { AuthenticationService } from './services/authentication.service';
     }
 )
 export class LoginComponent implements OnInit {
+    dataFromAuth: void;
     email: string;
     password: string;
     returnUrl: string;
     loading: boolean;
+    loadHome : boolean;
 
 
     constructor(private router: Router, private activatedRoute: ActivatedRoute, private authenticationService: AuthenticationService) {
@@ -24,25 +26,18 @@ export class LoginComponent implements OnInit {
 
     ngOnInit() {
         // reset login status
-        this.authenticationService.logout();
+       // this.authenticationService.logout();
 
         // get return url from route parameters or default to '/'
-        this.returnUrl = '/';
+        this.returnUrl = '';
     }
     signIn(email, password) {
         this.email = email;
         this.password = password;
         this.loading = true;
-        this.authenticationService.login(this.email, this.password)
-            .subscribe(
-            data => {
-                this.router.navigate([this.returnUrl]);
-                console.log("success");
-            },
-            error => {
-                this.router.navigate(['/login']);
-                  console.log("failure");
-            });
+
+        this.authenticationService.login(this.email, this.password, event);
+
     }
 
 }

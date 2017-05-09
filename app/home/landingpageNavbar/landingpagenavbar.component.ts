@@ -1,3 +1,4 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component } from '@angular/core';
 
 @Component(
@@ -9,4 +10,14 @@ import { Component } from '@angular/core';
     }
 )
 export class LandingPageNavBarComponent{
+
+    constructor(private route : Router)
+    {
+    
+    }
+
+    logOut(){
+        this.route.navigate(['login'])
+    }
+
 }
