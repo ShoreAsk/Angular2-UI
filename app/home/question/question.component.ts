@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MyquestionsComponent } from '../myquestions/myquestions.component'
 
 
 @Component(
