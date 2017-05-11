@@ -12,18 +12,18 @@ import 'rxjs/add/operator/map';
 })
 export class LandingPageComponent implements OnInit{
 
-    recentPosts = [];
+    recentPosts : Post[];
 
-    constructor(private _recentPost:RecentPostsService)
+    constructor(private _recentPostService:RecentPostsService)
     {
 
     }
 
     ngOnInit(){
-        this.recentPosts = this._recentPost.getRecentPosts().map(function(res){
+        this._recentPostService.getRecentPosts().subscribe(res => function(res){
         var data = res;
-        return new Post(data.id, data.name, data.email, data.post, data.answers);
-    })
+         this.recentPosts.push( new Post(data.id, data.name, data.email, data.post, data.answers));
+    });
     }
 
     submitAnswer(post)

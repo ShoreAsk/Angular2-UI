@@ -3,13 +3,13 @@
         <div class="col-sm-2 sidenav">
         </div>
         <div class="col-sm-8 text-left"> 
-            <h1>Recently feeds</h1>
+            <h1>Recent feeds</h1>
             <hr>
             <div *ngFor = "let post of recentPosts">
                 <div>
                     <h4>{{post.name}}<a href ="#">({{post.email}})</a></h4>
                     <h5>{{post.post}}</h5>
-                    <div class="indent" *ngIf="post.answers.length > 0">
+                    <div class="indent" *ngIf = "post.answers.length > 0">
                         <h5>Answers</h5>
                         <ul>
                             <li *ngFor= "let answer of post.answers">
