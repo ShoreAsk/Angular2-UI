@@ -1,19 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Http , Response } from "@angular/http";
+import { Http, Response } from "@angular/http";
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class RecentPostsService{
-    url : string = "http://10.198.161.60:5233/index"; 
-    posts ;
-    constructor(private _http : Http){
-        
+export class RecentPostsService {
+    url: string = "http://10.198.161.60:5233/index";
+    posts;
+    constructor(private _http: Http) {
+
     }
-    getRecentPosts(){
+    getRecentPosts() {
 
-       this.posts = this._http.get(this.url).map((res:Response) => JSON.parse(JSON.stringify(res)));
-       return this.posts;
-
+        return this._http.get(this.url)
+            .map((res: Response) => res.json());
 
         // return [
         //     {"id":1 , "name":"Rahul Doshi", "email": "rdoshi@shoretel.com", "post":"Please let me know the components in an MT Setup.", 
