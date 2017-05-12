@@ -20,33 +20,6 @@ export class LandingPageComponent implements OnInit{
     }
 
     ngOnInit(){
-        this._recentPostService.getRecentPosts().subscribe((res) => {
-        debugger;
-        this.recentPosts = res;
-        // var data = res;
-        //  this.recentPosts.push( new Post(data.id, data.name, data.email, data.post, data.answers));
-        });
-    }
-
-    submitAnswer(post)
-    {
-        post.textboxShow = false;
-        post.postAnswered = true;
-    }
-    
-    showTextBox(post)
-    {
-        post.textboxShow = true;
-    }
-
-    cancelAnswer(post)
-    {
-        post.textboxShow = false;
-    }
-
-    editAnswer(post)
-    {
-        post.postAnswered = false;
-        post.textboxShow = true;
+        this._recentPostService.getRecentPosts().subscribe((res) => this.recentPosts = res);
     }
 }

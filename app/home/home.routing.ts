@@ -1,3 +1,4 @@
+import { PostAnswerComponent } from './answers/answer.component';
 
 
 import { ModuleWithProviders } from '@angular/core';
@@ -14,7 +15,8 @@ import { AuthGuard } from "./guard/auth.guard";
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
-    { path: 'question', component: QuestionComponent, canActivate: [AuthGuard] }
+    { path: 'question', component: QuestionComponent, canActivate: [AuthGuard] },
+    { path: 'answers/:postId', component : PostAnswerComponent, canActivate: [AuthGuard] }
     // { path: 'myquestions', component: MyquestionsComponent, canActivate: [AuthGuard] },
     // { path: 'questionsforme', component: QuestionsformeComponent, canActivate: [AuthGuard] }
 ];

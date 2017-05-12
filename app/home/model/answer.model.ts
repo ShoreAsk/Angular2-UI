@@ -4,4 +4,5 @@ export class Answer {
     public answeredBy: string;
     public answeredByEmail : string;
     public upVotesforAnswer : number;
+    public isCorrectAnswer : boolean;
 }

@@ -1,0 +1,35 @@
+ <div id="view-container">
+    <div class="mobile-loader-container">
+    </div>
+    <div>
+        <landingpage-navbar></landingpage-navbar>
+        <div class="indent">
+        <h5>{{post.description}}</h5>
+        </div>
+        <div class="indent" *ngIf = "postAnswers.length > 0">
+            <ul>
+                <li *ngFor= "let answer of postAnswers">
+                    <h5>Answers</h5>
+                    <h6>{{answer.description}}</h6>
+                    <h6><a href="mailto:{{answer.answeredByEmail}}">&nbsp;&nbsp;{{answer.answeredBy}}</a></h6>
+                        <a href="javascript:void(0)" (click)="addUpvoteforAnswer(answer.id)" [class.disabled]="isClickedOnce">
+                            <span class="glyphicon glyphicon-thumbs-up"></span>
+                            <span class="badge">{{answer.upVotesForAnswer}}</span>
+                        </a>
+                </li>
+            </ul>
+        </div>
+
+        <!--<div>
+            <button type="button" class="btn btn-success" (click)=showTextBox(answer.postId) *ngIf="!post.textboxShow && !post.postAnswered">Answer this Question</button>
+            <div class="form-group" *ngIf=post.textboxShow>
+                <label for="Answer">Answer:</label>
+                <textarea class="form-control" rows="5" id="Answer" ([ngModel]) = "post.answer" ></textarea>
+                <button type="button" class="btn btn-primary" (click)=submitAnswer(post)>Submit</button>
+                <button type="button" class="btn" (click)=cancelAnswer(post)>Cancel</button>
+            </div>
+        </div>
+        <label class="label label-info" for="editAnswer" *ngIf = "post.postAnswered && !post.textboxShow" (click)=editAnswer(post)>Edit your answer</label>
+    </div>-->
+ </div>
+ </div>

@@ -3,49 +3,31 @@
         <div class="col-sm-2 sidenav">
         </div>
         <div class="col-sm-8 text-left"> 
-            <h1>Recent feeds</h1>
+            <h2>Recent feeds</h2>
             <hr>
             <div *ngFor = "let post of recentPosts">
-                <div>
-                    <h4>{{post.name}}<a href ="#">({{post.email}})</a></h4>
-                    <h5>{{post.post}}</h5>
-                    <div class="indent" *ngIf = "post.answers.length > 0">
-                        <h5>Answers</h5>
-                        <ul>
-                            <li *ngFor= "let answer of post.answers">
-                                <h6>{{answer.answer}}<a href="#">&nbsp;&nbsp;{{answer.answeredByEmail}}</a>
-                                    <a href="#">
-                                        <span class="glyphicon glyphicon-thumbs-up"></span>
-                                        <span class="badge">{{answer.upVotesforAnswer}}</span>
-                                    </a>
-                                </h6>
-                            </li>
-                        </ul>
+                    <h4><a [routerLink] ="['./answers', post.id]">{{post.question}}</a></h4>
+                    <h5>{{post.description}}</h5>
+                    <h6><a href ="mailto:{{post.email}}">{{post.askedBy}}</a></h6>
+                    <div *ngIf = "post.keyWords.length > 0">
+                        <span *ngFor="let tag of post.keyWords">{{tag}}</span>
                     </div>
-                    <button type="button" class="btn btn-success" (click)=showTextBox(post) *ngIf="!post.textboxShow && !post.postAnswered">Answer this Question</button>
-                    <div class="form-group" *ngIf=post.textboxShow>
-                    <label for="Answer">Answer:</label>
-                    <textarea class="form-control" rows="5" id="Answer" ([ngModel]) = "post.answer" ></textarea>
-                    <button type="button" class="btn btn-primary" (click)=submitAnswer(post)>Submit</button>
-                    <button type="button" class="btn" (click)=cancelAnswer(post)>Cancel</button>
-                </div>
-                <label class="label label-info" for="editAnswer" *ngIf = "post.postAnswered && !post.textboxShow" (click)=editAnswer(post)>Edit your answer</label>
-                <hr>
+                    <hr>
             </div>
         </div>
-    </div>
-    <div class="col-sm-2 sidenav">
-        <div class="well">
-            <p>Total questions asked till date</p>
-            <p><a href="#">23</a></p>
-        </div>
-        <div class="well">
-            <p>Upcoming products or features of Shoretel</p>
-            <p><a href ="#">Auto On Boarding</a></p>
-        </div>
-        <div class="well">
-            <p>Latest technologies which are in boom </p>
-            <p><a href="https://www.djangoproject.com/">Django</a></p>
+        <div class="col-sm-2 sidenav">
+            <div class="well">
+                <p>Total questions asked till date</p>
+                <p><a href="#">23</a></p>
+            </div>
+            <div class="well">
+                <p>Upcoming products or features of Shoretel</p>
+                <p><a href ="#">Auto On Boarding</a></p>
+            </div>
+            <div class="well">
+                <p>Latest technologies which are in boom </p>
+                <p><a href="https://www.djangoproject.com/">Django</a></p>
+            </div>
         </div>
     </div>
 </div>

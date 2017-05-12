@@ -1,29 +1,28 @@
+
 export class Post {
     public id : number;
-    public name : string;
-    public email: string;
-    public post : string;
-    public textboxShow: boolean; 
-    public postAnswered : boolean;
-    public answers : Answer[];
+    public askedBy : string;
+    public askedTo : string [];
+    public askedByEmail: string;
+    public question : string;
+    public description : string;
+    public keyWords : string [];
+    public time : string;
+    public codeSnippets : string [];
 
-
-    constructor(public Id : number, public Name, public Email, public Post, public Answers : Answer[])
+    // constructor(public Id : number, public AskedBy, public AskedTo, public AskedByEmail,
+    //  public Question, public Description, public Keywords)
+    // {
+    //     this.id =  Id,
+    //     this.askedBy = AskedBy,
+    //     this.askedTo = AskedTo,
+    //     this.askedByEmail = AskedByEmail,
+    //     this.question = Question,
+    //     this.description = Description
+    //     this.keyWords = Keywords
+    // }
+    constructor()
     {
-        this.id =  Id,
-        this.name = Name,
-        this.email = Email,
-        this.post = Post,
-        this.textboxShow = false,
-        this.answers = Answers
-        this.postAnswered = false
-    }
-}
 
-export interface Answer{
-    id : number;
-    answer : string ;
-    answeredBy: string;
-    answeredByEmail : string;
-    upVotesforAnswer : number;
+    }
 }

@@ -1,8 +1,9 @@
+import { PostAnswerComponent } from './answers/answer.component';
 
 
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router'; 
+import { CommonModule } from '@angular/common';
 
 import { HomeComponent } from './home.component';
 import { LandingPageComponent } from './landingpage/landingpage.component';
@@ -16,8 +17,16 @@ import { SharedModule } from "../shared/shared.module";
 import { AuthGuard } from "./guard/auth.guard";
 
 @NgModule({
-imports : [ BrowserModule, HomeRouting, SharedModule],
-declarations: [ HomeComponent, LandingPageComponent, LandingPageNavBarComponent,MyquestionsComponent, QuestionsformeComponent, QuestionComponent ],
+imports : [ CommonModule, 
+            HomeRouting, 
+            SharedModule],
+declarations: [ HomeComponent, 
+                LandingPageComponent, 
+                LandingPageNavBarComponent,
+                MyquestionsComponent,
+                QuestionsformeComponent, 
+                QuestionComponent, 
+                PostAnswerComponent ],
 exports: [ HomeComponent ],
 providers: [ AuthGuard ]
 
