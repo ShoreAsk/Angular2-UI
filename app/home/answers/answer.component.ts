@@ -24,7 +24,6 @@ export class PostAnswerComponent implements OnInit{
     ngOnInit()
     {
         this.postId = this.route.snapshot.params['postId'];
-        
         console.log(this.postId);
 
         this._postAnswersService.getPostById(this.postId).subscribe((res)=> this.post = res);

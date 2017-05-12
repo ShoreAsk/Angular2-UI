@@ -1,6 +1,6 @@
 
 export class Post {
-    public id : number;
+    public id : string;
     public askedBy : string;
     public askedTo : string [];
     public askedByEmail: string;
@@ -9,15 +9,15 @@ export class Post {
     public keyWords : string [];
     public time : string;
 
-    constructor(public Id : number, public AskedBy, public AskedTo, public AskedByEmail,
-     public Question, public Description, public Keywords)
-    {
-        this.id =  Id,
-        this.askedBy = AskedBy,
-        this.askedTo = AskedTo,
-        this.askedByEmail = AskedByEmail,
-        this.question = Question,
-        this.description = Description
-        this.keyWords = Keywords
-    }
+    // constructor(public Id : number, public AskedBy, public AskedTo, public AskedByEmail,
+    //  public Question, public Description, public Keywords)
+    // {
+    //     this.id =  Id,
+    //     this.askedBy = AskedBy,
+    //     this.askedTo = AskedTo,
+    //     this.askedByEmail = AskedByEmail,
+    //     this.question = Question,
+    //     this.description = Description
+    //     this.keyWords = Keywords
+    // }
 }

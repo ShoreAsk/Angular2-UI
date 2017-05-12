@@ -1,9 +1,11 @@
+import { AskQuestionComponent } from './askquestion/askquestion.component';
 import { PostAnswerComponent } from './answers/answer.component';
 
 
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router'; 
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { HomeComponent } from './home.component';
 import { LandingPageComponent } from './landingpage/landingpage.component';
@@ -19,14 +21,16 @@ import { AuthGuard } from "./guard/auth.guard";
 @NgModule({
 imports : [ CommonModule, 
             HomeRouting, 
-            SharedModule],
+            SharedModule, 
+            FormsModule],
 declarations: [ HomeComponent, 
                 LandingPageComponent, 
                 LandingPageNavBarComponent,
                 MyquestionsComponent,
                 QuestionsformeComponent, 
                 QuestionComponent, 
-                PostAnswerComponent ],
+                PostAnswerComponent,
+                AskQuestionComponent ],
 exports: [ HomeComponent ],
 providers: [ AuthGuard ]
 

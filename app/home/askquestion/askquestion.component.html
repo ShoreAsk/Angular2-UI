@@ -1,0 +1,25 @@
+<div id="view-container">
+    <div class="mobile-loader-container">
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="postAlert == false">Failed to post your question</div>
+    <div class="form-group">
+        <br/>
+        <br/>
+        <label for="Question">Question</label>
+        <textarea class="form-control" rows="1" id="question" [(ngModel)]="post.question" (blur)="getReccomendations(post.question)"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="QuestionDescription">Question Description</label>
+        <textarea class="form-control" rows="6" id="description" [(ngModel)]="post.description"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="KeyWords">Keywords</label>
+        <textarea class="form-control" rows="1" id="keyWords" [(ngModel)]="keyWords"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="askedTo">Ask to</label>
+        <textarea class="form-control" rows="1" id="askedTo" [(ngModel)]="askedTo"></textarea>
+    </div>
+    <button type="button" class="btn btn-primary" (click)=submitQuestion()>Submit</button>
+    <button type="button" class="btn" (click)=resetField()>Reset</button>
+</div>

@@ -1,6 +1,6 @@
 
 export class Post {
-    public id : number;
+    public id : string;
     public askedBy : string;
     public askedTo : string [];
     public askedByEmail: string;
